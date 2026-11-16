@@ -3,62 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JNU Onam 2026</title>
+    <title>JNU Onam 2026 - Virtual Queue</title>
     <style>
         body {
-            background-color: #f0fff0; /* Very light green background */
+            background: linear-gradient(135deg, #f0fff0, #e2fbe2);
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #1e293b;
         }
 
         .container {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            max-width: 440px;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .onam-title {
-            font-size: 4rem;
-            font-weight: bold;
-            color: black;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #1e1b4b;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
         }
         
         .date-location {
-            font-size: 1.2rem;
-            color: black;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .onasadaya-section {
+            padding: 20px 15px;
+            background-color: rgba(144, 238, 144, 0.25);
+            border-radius: 14px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            margin-bottom: 20px;
+        }
+        
+        .onasadaya-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #15803d;
+            margin-bottom: 2px;
+        }
+
+        .onasadaya-time {
+            font-size: 1rem;
+            color: #166534;
+            margin-bottom: 15px;
+        }
+        
+        .virtual-queue-box {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(21, 128, 61, 0.3);
+        }
+
+        .queue-notice {
+            font-size: 0.9rem;
+            color: #991b1b;
+            font-weight: bold;
+            margin-top: 12px;
             line-height: 1.4;
         }
 
-         .onasadaya-section {
-            padding: 15px;
-            background-color: rgba(144, 238, 144, 0.3); /* Light green background */
-            border-radius: 8px;
-            display: block;
-        }
-        
-         .onasadaya-title {
-            font-size: 2.8rem;
+        .btn-join {
+            background: linear-gradient(135deg, #7e22ce, #6b21a8);
+            color: white;
+            font-size: 1.1rem;
             font-weight: bold;
-            color: #006400; /* Dark green color */
-            line-height: 1.3;
-        }
-        
-        .virtual-queue {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #991b1b; /* red color */
-            line-height: 1.2;
-            padding: 15px;
-            background-color: rgba(144, 238, 144, 0.3); /* Light green background */
-            border-radius: 8px;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(126, 34, 206, 0.3);
+            transition: transform 0.1s ease, background 0.2s ease;
+            text-decoration: none;
             display: inline-block;
+        }
+
+        .btn-join:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .btn-join:active {
+            transform: translateY(1px);
+        }
+
+        .notice {
+            background: #fef08a;
+            color: #854d0e;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            border: 1px solid #fde047;
+        }
+
+        .footer {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 500;
+            margin: 0;
         }
     </style>
 </head>
@@ -66,30 +128,13 @@
 
     <div class="container">
         <div class="onam-title">JNU ONAM 2026</div>
-        <div class="date-location">23<sup>rd</sup> November<br>Sabarmati Lawns</div>
+        <div class="date-location">23<sup>rd</sup> November • Sabarmati Lawns</div>
+        
         <div class="onasadaya-section">
             <div class="onasadaya-title">Onasadhya</div>
             <div class="onasadaya-time"><strong>7 PM</strong> onwards</div>
-            <div class="virtual-queue">
-            <button style="
-            background-color: rgba(126, 34, 206, 0.8); 
-            color: white; 
-            font-size: 18px; 
-            padding: 10px 20px; 
-            border: none; 
-            border-radius: 8px; 
-            cursor: pointer;" 
-                onclick="alert('Not live yet. Please check back on event day!');">
-            Join Virtual Queue
-            </button>
-            <br>Virtual queue will be active from  22<sup>nd</sup> November.<br>Stay tuned!
-            </div>
-        </div>
-        <div class="notice">
-            <p><strong>A food coupon is mandatory for entry.</strong><br>Please collect yours in advance.</p>
-        </div>
-        <div class="footer"><p>See you there! 🌸</p></div>
-    </div>
-    
-</body>
-</html>
+            
+            <div class="virtual-queue-box">
+                <!-- Replace the href below with your actual Google Apps Script Web App URL -->
+                <a href="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" 
+                   target="_self"
