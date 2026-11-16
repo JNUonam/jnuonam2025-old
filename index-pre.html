@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNU Onam 2026 - Virtual Queue</title>
+    <style>
+        body {
+            /* Matched Booking.html background gradient */
+            background: linear-gradient(135deg, #4c1d95, #1e1b4b);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            padding: 35px 25px;
+            /* Matched Booking.html frosted glass card style & shadow */
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+        }
+        
+        .onam-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .date-location {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .onasadaya-section {
+            padding: 20px 15px;
+            /* Subtle translucent inner highlight block matching theme */
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            display: block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .onasadaya-title {
+            font-size: 2.4rem;
+            font-weight: bold;
+            color: #facc15; /* Warm gold highlight for Onasadhya */
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .onasadaya-time {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+        
+        .virtual-queue {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+        }
+
+        .btn-join {
+            /* Matched Booking.html yellow action button */
+            background-color: #facc15; 
+            color: #1a1a1a; 
+            font-size: 1.05rem; 
+            font-weight: bold;
+            padding: 14px 24px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-join:hover {
+            opacity: 0.9;
+        }
+
+        .notice {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            line-height: 1.4;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="onam-title">JNU ONAM 2026</div>
+        <div class="date-location">23<sup>rd</sup> November<br>Sabarmati Lawns</div>
+        
+        <div class="onasadaya-section">
+            <div class="onasadaya-title">Onasadhya</div>
+            <div class="onasadaya-time"><strong>7 PM</strong> onwards</div>
+            
+            <div class="virtual-queue">
+                <!-- Replace href with your Google Apps Script Web App URL -->
+                <a href="https://script.google.com/macros/s/AKfycbxkJ1DqUM11FGDtJPPsRPxPjY7okj1R7f8A7-5VQj2JyfuoliwPfgDTiszDyLRBQbLd6g/exec" 
+                   target="_self" 
+                   class="btn-join">
+                   Join Virtual Queue
+                </a>
+                <br>
+                <span id="queue-status">
+                    Virtual queue will be active from <strong>22<sup>nd</sup> November</strong>.
+                </span>
+            </div>
+        </div>
+
+        <div class="notice">
+            <strong>A food coupon is mandatory for entry.</strong><br>Please collect yours in advance.
+        </div>
+        
+        <div class="footer"><p>See you there! 🌸</p></div>
+    </div>
+
+    <script>
+        // Automatically switches the status text when November 22 arrives
+        const launchDate = new Date('November 17, 2026 00:40:00').getTime();
+        const now = new Date().getTime();
+        
+        if (now >= launchDate) {
+            document.getElementById('queue-status').innerHTML = 'Virtual queue is <strong>active now!</strong>';
+        }
+    </script>
+    
+</body>
+</html>
