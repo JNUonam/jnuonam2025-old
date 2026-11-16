@@ -1,2 +1,2 @@
-# JNU Onam 2025
+# JNU Onam 2026
 Comming soon!
