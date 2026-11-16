@@ -101,6 +101,14 @@
             opacity: 0.9;
         }
 
+        .btn-locked {
+            background-color: #94a3b8 !important; /* Grey background */
+            color: #475569 !important;            /* Dark grey text */
+            cursor: not-allowed !important;
+            pointer-events: none;
+            box-shadow: none !important;
+        }
+
         .notice {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
@@ -150,19 +158,34 @@
     </div>
 
     <script>
-        // Automatically switches the status text when November 22 arrives
-        const launchDate = new Date('November 17, 2026 01:48:00').getTime();
-        const now = new Date().getTime();
+        // 1. Paste your Google Apps Script Web App URL inside the quotes below
+        const BOOKING_URL = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
 
-        const btn = document.getElementById('join-btn');
-        const statusSpan = document.getElementById('queue-status');
+        // 2. Launch date locked to Indian Standard Time (IST)
+        const launchDate = new Date("2026-11-22T02:05:00+05:30").getTime();
 
-        if (now >= launchDate) {
-            // Unlocks the button and updates status when live
-            btn.href = "https://script.google.com/macros/s/AKfycbxkJ1DqUM11FGDtJPPsRPxPjY7okj1R7f8A7-5VQj2JyfuoliwPfgDTiszDyLRBQbLd6g/exec"
-            btn.classList.remove('btn-locked');
-            btn.innerText = 'Join Virtual Queue';
-            statusSpan.innerHTML = 'Virtual queue is <strong>active now!</strong>';
+        const btn = document.getElementById("join-btn");
+        const statusSpan = document.getElementById("queue-status");
+
+        function checkLaunchStatus() {
+            const now = new Date().getTime();
+            if (now >= launchDate) {
+                btn.href = "https://script.google.com/macros/s/AKfycbxkJ1DqUM11FGDtJPPsRPxPjY7okj1R7f8A7-5VQj2JyfuoliwPfgDTiszDyLRBQbLd6g/exec";
+                btn.classList.remove("btn-locked");
+                btn.innerText = "Join Virtual Queue";
+                statusSpan.innerHTML = "Virtual queue is <strong>active now!</strong>";
+                return true;
+            }
+            return false;
+        }
+
+        // Check immediately on load, and re-check every second if still waiting
+        if (!checkLaunchStatus()) {
+            const timer = setInterval(function() {
+                if (checkLaunchStatus()) {
+                    clearInterval(timer);
+                }
+            }, 1000);
         }
     </script>
     
