@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JNU Onam 2026</title>
+    <style>
+        body {
+            background-color: #f0fff0; /* Very light green background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .onam-title {
+            font-size: 3.8rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .date-location {
+            font-size: 1.2rem;
+            color: black;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .onasadaya-section {
+            padding: 20px;
+            background-color: rgba(144, 238, 144, 0.3); /* Light green background */
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        
+        .onasadaya-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #006400; /* Dark green color */
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .onasadaya-time {
+            font-size: 1.1rem;
+            color: black;
+            margin-bottom: 20px;
+        }
+        
+        .virtual-queue {
+            font-size: 1.1rem;
+            color: black;
+            line-height: 1.5;
+        }
+
+        .btn-join {
+            background-color: #7e22ce; 
+            color: white; 
+            font-size: 18px; 
+            font-weight: bold;
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .btn-join:hover {
+            background-color: #6b21a8;
+        }
+
+        .notice {
+            font-size: 1rem;
+            color: black;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .footer {
+            font-size: 1rem;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="onam-title">JNU ONAM 2026</div>
+        <div class="date-location">23<sup>rd</sup> November<br>Sabarmati Lawns</div>
+        
+        <div class="onasadaya-section">
+            <div class="onasadaya-title">Onasadhya</div>
+            <div class="onasadaya-time"><strong>7 PM</strong> onwards</div>
+            
+            <div class="virtual-queue">
+                <!-- Replace href with your Google Apps Script Web App URL -->
+                <a href="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" 
+                   target="_self" 
+                   class="btn-join">
+                   Join Virtual Queue
+                </a>
+                <br>
+                <span id="queue-status">
+                    Virtual queue will be active from <strong>22<sup>nd</sup> November</strong>.
+                </span>
+            </div>
+        </div>
+
+        <div class="notice">
+            <strong>A food coupon (100–900) is mandatory for entry.</strong><br>Please collect yours in advance.
+        </div>
+        
+        <div class="footer"><p>See you there! 🌸</p></div>
+    </div>
+
+    <script>
+        // Automatically switches the status text when November 22 arrives
+        const launchDate = new Date('November 22, 2026 00:00:00').getTime();
+        const now = new Date().getTime();
+        
+        if (now >= launchDate) {
+            document.getElementById('queue-status').innerHTML = 'Virtual queue is <strong>active now!</strong>';
+        }
+    </script>
+    
+</body>
+</html>
