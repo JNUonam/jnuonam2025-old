@@ -152,6 +152,12 @@
         // Automatically switches the status text when November 22 arrives
         const launchDate = new Date('November 17, 2026 00:52:00').getTime();
         const now = new Date().getTime();
+
+        if (now < launchDate) {
+            const btn = document.getElementById('join-btn');
+            btn.style.background = '#94a3b8';
+            btn.style.pointerEvents = 'none';
+            btn.innerText = 'Queue not live yet';
         
         if (now >= launchDate) {
             document.getElementById('queue-status').innerHTML = 'Virtual queue is <strong>active now!</strong>';
