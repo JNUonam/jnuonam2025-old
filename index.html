@@ -137,4 +137,42 @@
             <div class="virtual-queue-box">
                 <!-- Replace the href below with your actual Google Apps Script Web App URL -->
                 <a href="https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec" 
-                   target="_self"
+                   target="_self" 
+                   class="btn-join" 
+                   id="join-btn">
+                   Join Virtual Queue
+                </a>
+                
+                <div class="queue-notice" id="queue-status-text">
+                    Virtual queue will be active from <strong>22<sup>nd</sup> November</strong>!
+                </div>
+            </div>
+        </div>
+
+        <div class="notice">
+            <strong>⚠️ Important Notice:</strong><br>
+            A physical paper food coupon (Nos. 100–900) is mandatory for entry. Please keep it ready.
+        </div>
+        
+        <div class="footer"><p>See you there! 🌸</p></div>
+    </div>
+
+    <script>
+        // OPTIONAL AUTOMATION: 
+        // If you want the button to automatically unlock only on Nov 22, 2026, 
+        // uncomment the lines below. Otherwise, it is live and clickable right now!
+        
+        /*
+        const launchDate = new Date('November 22, 2026 00:00:00').getTime();
+        const now = new Date().getTime();
+        
+        if (now < launchDate) {
+            const btn = document.getElementById('join-btn');
+            btn.style.background = '#94a3b8';
+            btn.style.pointerEvents = 'none';
+            btn.innerText = 'Queue Opens Nov 22';
+        }
+        */
+    </script>
+</body>
+</html>
