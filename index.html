@@ -131,7 +131,7 @@
                 <!-- Replace href with your Google Apps Script Web App URL -->
                 <a href="https://script.google.com/macros/s/AKfycbxkJ1DqUM11FGDtJPPsRPxPjY7okj1R7f8A7-5VQj2JyfuoliwPfgDTiszDyLRBQbLd6g/exec" 
                    target="_self" 
-                   class="btn-join"
+                   class="btn-join btn-locked"
                     id="join-btn">
                    Join Virtual Queue
                 </a>
@@ -151,17 +151,17 @@
 
     <script>
         // Automatically switches the status text when November 22 arrives
-        const launchDate = new Date('November 17, 2026 01:18:00').getTime();
+        const launchDate = new Date('November 17, 2026 01:32:00').getTime();
         const now = new Date().getTime();
 
-        if (now < launchDate) {
-            const btn = document.getElementById('join-btn');
-            btn.style.background = '#94a3b8';
-            btn.style.pointerEvents = 'none';
-            btn.innerText = 'Queue not live yet';
-        
+        const btn = document.getElementById('join-btn');
+        const statusSpan = document.getElementById('queue-status');
+
         if (now >= launchDate) {
-            document.getElementById('queue-status').innerHTML = 'Virtual queue is <strong>active now!</strong>';
+            // Unlocks the button and updates status when live
+            btn.classList.remove('btn-locked');
+            btn.innerText = 'Join Virtual Queue';
+            statusSpan.innerHTML = 'Virtual queue is <strong>active now!</strong>';
         }
     </script>
     
